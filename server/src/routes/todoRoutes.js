@@ -2,10 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json({
-        message: "Fetching all todos"
-    });
-});
+const { getTodos } = require("../controllers/todoController");
+
+router.get("/", getTodos);
 
 module.exports = router;
