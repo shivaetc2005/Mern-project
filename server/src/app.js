@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const errorHandler = require("./middleware/errorHandler");
 const todoRoutes = require("./routes/todoRoutes");
 
 const app = express();
@@ -18,5 +18,5 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/todos", todoRoutes);
-
+app.use(errorHandler);
 module.exports = app;
