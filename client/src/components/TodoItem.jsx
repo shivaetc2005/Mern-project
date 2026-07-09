@@ -1,7 +1,7 @@
-function TodoItem() {
+function TodoItem({ todo }) {
   return (
     <div className="todo-item">
-      <span>Learn Express</span>
+      <span>{todo.title}</span>
 
       <div>
         <button>Edit</button>

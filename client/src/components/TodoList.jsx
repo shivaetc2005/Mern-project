@@ -1,11 +1,14 @@
 import TodoItem from "./TodoItem";
 
-function TodoList() {
+function TodoList({ todos }) {
   return (
     <div className="todo-list">
-      <TodoItem />
-      <TodoItem />
-      <TodoItem />
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo._id}
+          todo={todo}
+        />
+      ))}
     </div>
   );
 }
